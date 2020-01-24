@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Ranor</title>
+    <link>https://ranoriginals.github.io/categories/linux/</link>
+    <description>Recent content in linux on Ranor</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Thu, 23 Jan 2020 22:47:05 +0800</lastBuildDate>
+    
+	<atom:link href="https://ranoriginals.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>研究组服务器使用说明</title>
+      <link>https://ranoriginals.github.io/2020/01/server/</link>
+      <pubDate>Thu, 23 Jan 2020 22:47:05 +0800</pubDate>
+      
+      <guid>https://ranoriginals.github.io/2020/01/server/</guid>
+      <description>P100服务器 主要配置 CPU: Intel Xeon(R) E5-2637v4@3.50GHz * 16 GPU: Quadro M2000 &amp;amp; Telsa P100 16GB * 4 内存: 128GB 主要储存空间: 8T(/work)+8T(/project) IP地址：114.212.167.243，同时有域名：bixie</description>
+    </item>
+    
+  </channel>
+</rss>

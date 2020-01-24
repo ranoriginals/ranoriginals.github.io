@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>研究组服务器使用说明 | Ranor</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="LoveIt 主题演示">
+<link rel="canonical" href="https://ranoriginals.github.io/2020/01/server/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="研究组服务器使用说明"/>
+<meta name="twitter:description" content="P100服务器 主要配置 CPU: Intel Xeon(R) E5-2637v4@3.50GHz * 16 GPU: Quadro M2000 &amp; Telsa P100 16GB * 4 内存: 128GB 主要储存空间: 8T(/work)&#43;8T(/project) IP地址：114.212.167.243，同时有域名：bixie"/>
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "研究组服务器使用说明",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/ranoriginals.github.io\/2020\/01\/server\/"
+    },
+    
+        "image": {
+            "@type": "ImageObject",
+            "url": "https:\/\/ranoriginals.github.io\/cover.png",
+            "width":  800 ,
+            "height":  600 
+        },
+    
+    "genre": "posts",
+    
+        "keywords": "linux",
+    
+    "wordcount":  624 ,
+    "url": "https:\/\/ranoriginals.github.io\/2020\/01\/server\/",
+    
+        "datePublished": "2020-01-23T22:47:05\x2b08:00",
+    
+    
+        "dateModified": "2020-01-23T22:47:05\x2b08:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "XXXX",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/ranoriginals.github.io\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://ranoriginals.github.io/">Ranor</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/posts" title="">文章</a>
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/tags" title="">标签</a>
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/categories" title="">分类</a>
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/about" title="">关于</a>
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/" title=""></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://ranoriginals.github.io/">Ranor</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/posts" title="">文章</a>
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/tags" title="">标签</a>
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/categories" title="">分类</a>
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/about" title="">关于</a>
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/" title=""></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+       
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">研究组服务器使用说明</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://ranoriginals.github.io/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Ranor&nbsp;</a>
+                <span class="post-category">
+                        收录于
+                        <i class="far fa-folder fa-fw"></i><a href="https://ranoriginals.github.io/categories/linux/">linux</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-01-23>2020-01-23</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 624 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 2 分钟&nbsp;</div>
+        </div>
+
+        
+
+        
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <a class="post-dummy-target" id="p100"></a><h2>P100服务器</h2>
+<a class="post-dummy-target" id="heading"></a><h4>主要配置</h4>
+<ul>
+<li>
+<p>CPU: Intel Xeon(R) <a href="mailto:E5-2637v4@3.50GHz">E5-2637v4@3.50GHz</a> * 16</p>
+</li>
+<li>
+<p>GPU: Quadro M2000 &amp; Telsa P100 16GB * 4</p>
+</li>
+<li>
+<p>内存: 128GB</p>
+</li>
+<li>
+<p>主要储存空间: 8T(<code>/work</code>)+8T(<code>/project</code>)</p>
+</li>
+</ul>
+<a class="post-dummy-target" id="ip114212167243bixienjueducnipssh"></a><h4>IP地址：114.212.167.243，同时有域名：bixie.nju.edu.cn，可以指向该IP地址。使用SSH连接，可以直接连接外网，但是不能从外网访问</h4>
+<a class="post-dummy-target" id="-idzhang-san"></a><h4>用户名一般是姓_名，比如张三的用户ID就是zhang_san，登陆密码请联系管理员进行设置，登陆方式为：</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">ssh -Y zhang_san@bixie.nju.edu.cn 
+
+ssh -Y zhang_san@114.212.167.243
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="homework"></a><h4>用户登入后会进入<code>/home</code>文件夹，这一文件夹只用于存放一些用户设置项。如果需要进行计算以及存储数据，需切换到<code>/work</code>文件夹，用户可以自行建立一个文件夹以存放自己的数据。考虑到不同人的工作之间可能有交集，所以用户可以访问此文件夹中其他用户的目录，但是如果没有经过他人的允许，请不要随意访问他人的目录。</h4>
+<a class="post-dummy-target" id="heading-1"></a><h4>由于每个人在工作中所使用的程序有所不同，所以科研过程中用到的软件可以自行安装，安装包也可以放在自己的工作目录中。如果确认遇到安装权限问题，请联系管理员</h4>
+<a class="post-dummy-target" id="p100-1"></a><h4>P100服务器上已经安装有常用软件，如果需要使用把对应的环境变量添加进自己的环境变量配置即可。</h4>
+<p>CUDA:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># cuda</span> 
+<span class="nb">export</span> <span class="nv">CUDA_HOME</span><span class="o">=</span>/usr/local/cuda-10.0 
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/cuda-10.0/bin:<span class="nv">$PATH</span> 
+<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/local/cuda-10.0/lib64:<span class="nv">$LD_LIBRARY_PATH</span> 
+<span class="nb">export</span> <span class="nv">LIBRARY_PATH</span><span class="o">=</span>/usr/local/cuda-10.0/lib64:<span class="nv">$LIBRARY_PATH</span> 
+</code></pre></td></tr></table>
+</div>
+</div><p>PGI编译器:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#pgi</span> 
+<span class="nb">export</span> <span class="nv">PGI</span><span class="o">=</span>/opt/pgi 
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/opt/pgi/linux86-64/18.10/bin:<span class="nv">$PATH</span> 
+<span class="nb">export</span> <span class="nv">MANPATH</span><span class="o">=</span><span class="nv">$MANPATH</span>:/opt/pgi/linux86-64/18.10/man 
+<span class="nb">export</span> <span class="nv">LM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$LM_LICENSE_FILE</span>:/opt/pgi/license.dat 
+</code></pre></td></tr></table>
+</div>
+</div><p>SAC:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#sac</span> 
+<span class="nb">export</span> <span class="nv">SACHOME</span><span class="o">=</span>/usr/local/sac 
+<span class="nb">export</span> <span class="nv">SACAUX</span><span class="o">=</span><span class="si">${</span><span class="nv">SACHOME</span><span class="si">}</span>/aux 
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">SACHOME</span><span class="si">}</span>/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span> 
+<span class="nb">export</span> <span class="nv">SAC_DISPLAY_COPYRIGHT</span><span class="o">=</span><span class="m">1</span> 
+<span class="nb">export</span> <span class="nv">SAC_PPK_LARGE_CROSSHAIRS</span><span class="o">=</span><span class="m">1</span> 
+<span class="nb">export</span> <span class="nv">SAC_USE_DATABASE</span><span class="o">=</span><span class="m">0</span> 
+</code></pre></td></tr></table>
+</div>
+</div><p>GMT:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#gmt</span> 
+<span class="nb">export</span> <span class="nv">GMT5HOME</span><span class="o">=</span>/opt/GMT-5.4.5 
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">GMT5HOME</span><span class="si">}</span>/bin:<span class="nv">$PATH</span> 
+<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="si">}</span>:<span class="si">${</span><span class="nv">GMT5HOME</span><span class="si">}</span>/lib64 
+</code></pre></td></tr></table>
+</div>
+</div><p>Intel编译器:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#intel</span> 
+<span class="nb">source</span> /opt/intel/vtune_amplifier_2019/amplxe-vars.sh quiet 
+<span class="nb">source</span> /opt/intel/inspector_2019/inspxe-vars.sh quiet 
+<span class="nb">source</span> /opt/intel/advisor_2019/advixe-vars.sh quiet 
+<span class="nb">source</span> /opt/intel/bin/compilervars.sh intel64 
+</code></pre></td></tr></table>
+</div>
+</div><p>OpenMPI:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># openmpi</span> 
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/mpi-3.1.4/bin:<span class="nv">$PATH</span> 
+</code></pre></td></tr></table>
+</div>
+</div><p>Taup:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># Taup</span> 
+<span class="nb">export</span> <span class="nv">TAUPHOME</span><span class="o">=</span>/opt/TauP-2.4.5 
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">TAUPHOME</span><span class="si">}</span>/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span> 
+</code></pre></td></tr></table>
+</div>
+</div><a class="post-dummy-target" id="v100"></a><h2>V100服务器</h2>
+<a class="post-dummy-target" id="ip11421216961ssh"></a><h4>IP地址：114.212.169.61，使用SSH连接，不可以直接连接外网，也不能从外网访问</h4>
+<a class="post-dummy-target" id="heading-2"></a><h4>如何访问外网</h4>
+
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-01-23 更新</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://ranoriginals.github.io/2020/01/server/index.md" target="_blank">阅读原始文档</a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://ranoriginals.github.io/tags/linux/"><i class="fas fa-tag fa-fw"></i>linux</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="https://ranoriginals.github.io/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+            由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://ranoriginals.github.io/">Ranor</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>
