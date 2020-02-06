@@ -34,9 +34,9 @@ CUDA:
 ``` bash
 # cuda 
 export CUDA_HOME=/usr/local/cuda-10.0 
-export PATH=/usr/local/cuda-10.0/bin:$PATH 
-export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64:$LD_LIBRARY_PATH 
-export LIBRARY_PATH=/usr/local/cuda-10.0/lib64:$LIBRARY_PATH 
+export PATH=${CUDA_HOME}/bin:$PATH 
+export LD_LIBRARY_PATH=${CUDA_HOME}/lib64:$LD_LIBRARY_PATH 
+export LIBRARY_PATH=${CUDA_HOME}/lib64:$LIBRARY_PATH 
 ```
 
 PGI编译器: 
@@ -44,9 +44,9 @@ PGI编译器:
 ```bash
 #pgi 
 export PGI=/opt/pgi 
-export PATH=/opt/pgi/linux86-64/18.10/bin:$PATH 
-export MANPATH=$MANPATH:/opt/pgi/linux86-64/18.10/man 
-export LM_LICENSE_FILE=$LM_LICENSE_FILE:/opt/pgi/license.dat 
+export PATH=${PGI}/linux86-64/18.10/bin:$PATH 
+export MANPATH=$MANPATH:${PGI}/linux86-64/18.10/man 
+export LM_LICENSE_FILE=$LM_LICENSE_FILE:${PGI}/license.dat 
 ```
 
 SAC: 

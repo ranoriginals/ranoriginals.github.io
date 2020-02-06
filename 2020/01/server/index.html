@@ -228,9 +228,9 @@ ssh -Y zhang_san@114.212.167.243
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># cuda</span> 
 <span class="nb">export</span> <span class="nv">CUDA_HOME</span><span class="o">=</span>/usr/local/cuda-10.0 
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/cuda-10.0/bin:<span class="nv">$PATH</span> 
-<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/local/cuda-10.0/lib64:<span class="nv">$LD_LIBRARY_PATH</span> 
-<span class="nb">export</span> <span class="nv">LIBRARY_PATH</span><span class="o">=</span>/usr/local/cuda-10.0/lib64:<span class="nv">$LIBRARY_PATH</span> 
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">CUDA_HOME</span><span class="si">}</span>/bin:<span class="nv">$PATH</span> 
+<span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">CUDA_HOME</span><span class="si">}</span>/lib64:<span class="nv">$LD_LIBRARY_PATH</span> 
+<span class="nb">export</span> <span class="nv">LIBRARY_PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">CUDA_HOME</span><span class="si">}</span>/lib64:<span class="nv">$LIBRARY_PATH</span> 
 </code></pre></td></tr></table>
 </div>
 </div><p>PGI编译器:</p>
@@ -245,9 +245,9 @@ ssh -Y zhang_san@114.212.167.243
 <td class="lntd">
 <pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#pgi</span> 
 <span class="nb">export</span> <span class="nv">PGI</span><span class="o">=</span>/opt/pgi 
-<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/opt/pgi/linux86-64/18.10/bin:<span class="nv">$PATH</span> 
-<span class="nb">export</span> <span class="nv">MANPATH</span><span class="o">=</span><span class="nv">$MANPATH</span>:/opt/pgi/linux86-64/18.10/man 
-<span class="nb">export</span> <span class="nv">LM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$LM_LICENSE_FILE</span>:/opt/pgi/license.dat 
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="si">${</span><span class="nv">PGI</span><span class="si">}</span>/linux86-64/18.10/bin:<span class="nv">$PATH</span> 
+<span class="nb">export</span> <span class="nv">MANPATH</span><span class="o">=</span><span class="nv">$MANPATH</span>:<span class="si">${</span><span class="nv">PGI</span><span class="si">}</span>/linux86-64/18.10/man 
+<span class="nb">export</span> <span class="nv">LM_LICENSE_FILE</span><span class="o">=</span><span class="nv">$LM_LICENSE_FILE</span>:<span class="si">${</span><span class="nv">PGI</span><span class="si">}</span>/license.dat 
 </code></pre></td></tr></table>
 </div>
 </div><p>SAC:</p>
