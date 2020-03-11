@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>SPECFEM2D避免数值频散 | Ranor</title><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noodp" />
+<meta name="Description" content="LoveIt 主题演示">
+<link rel="prev" href="https://ranoriginals.github.io/2020/01/server/" />
+<link rel="canonical" href="https://ranoriginals.github.io/2020/03/sem/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SPECFEM2D避免数值频散"/>
+<meta name="twitter:description" content="在使用SPECFEM2D计算理论地震图的过程中，Par_file中output_color_image选项决定了是否输出波场的snapsho"/>
+<script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "SPECFEM2D避免数值频散",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https:\/\/ranoriginals.github.io\/2020\/03\/sem\/"
+    },
+    
+        "image": {
+            "@type": "ImageObject",
+            "url": "https:\/\/ranoriginals.github.io\/cover.png",
+            "width":  800 ,
+            "height":  600 
+        },
+    
+    "genre": "posts",
+    
+        "keywords": "SEM",
+    
+    "wordcount":  1485 ,
+    "url": "https:\/\/ranoriginals.github.io\/2020\/03\/sem\/",
+    
+        "datePublished": "2020-03-11T15:22:53\x2b08:00",
+    
+    
+        "dateModified": "2020-03-11T15:22:53\x2b08:00",
+    
+    
+        "license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.",
+    
+    
+        "publisher": {
+            "@type": "Organization",
+            "name": "XXXX",
+            "logo": {
+            "@type": "ImageObject",
+            "url": "https:\/\/ranoriginals.github.io\/logo.png",
+            "width":  127 ,
+            "height":  40 
+            }
+        },
+    
+    
+    "description": ""
+    }
+    </script>
+<link rel="stylesheet" href="/css/style.min.css">
+<link rel="stylesheet" href="/css/lib/fontawesome-free/all.min.min.css">
+
+<link rel="stylesheet" href="/css/lib/animate/animate.min.min.css">
+
+    </head>
+    <body>
+        <script>
+            window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            window.isDark && document.body.classList.add('dark-theme');
+        </script>
+        <div class="wrapper">
+            <nav class="navbar">
+    <div class="navbar-container">
+        <div class="navbar-header animated bounceIn">
+            <a href="https://ranoriginals.github.io/">Ranor</a>
+        </div>
+        <div class="navbar-menu">
+            
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/posts" title="">文章</a>
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/tags" title="">标签</a>
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/categories" title="">分类</a>
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/about" title="">关于</a>
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/" title=""></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile">
+     <div class="navbar-container">
+        <div class="navbar-header">
+            <div class="navbar-header-title animated bounceIn">
+                <a href="https://ranoriginals.github.io/">Ranor</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="navbar-menu" id="mobile-menu">
+            
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/posts" title="">文章</a>
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/tags" title="">标签</a>
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/categories" title="">分类</a>
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/about" title="">关于</a>
+            
+                <a class="menu-item" href="https://ranoriginals.github.io/" title=""></a>
+            
+            <a href="javascript:void(0);" class="theme-switch"><i class="fas fa-adjust fa-rotate-180 fa-fw"></i></a>
+        </div>
+    </div>
+</nav><main class="main">
+                <div class="container">
+                    
+    
+    
+    
+       
+    
+
+    <article class="post-warp">
+        <h1 class="post-title animated flipInX">SPECFEM2D避免数值频散</h1>
+
+        <div class="post-meta">
+            <div class="post-meta-main">
+                <a class="author" href="https://ranoriginals.github.io/" rel="author"><i class="fas fa-user-circle fa-fw"></i>Ranor&nbsp;</a>
+                <span class="post-category">
+                        收录于
+                        <i class="far fa-folder fa-fw"></i><a href="https://ranoriginals.github.io/categories/sem/">SEM</a>
+                            
+                    </span>
+            </div>
+            <div class="post-meta-other">
+                <i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-03-11>2020-03-11</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1485 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 3 分钟&nbsp;</div>
+        </div>
+
+        
+
+        
+
+        <div class="post-content">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <p>在使用SPECFEM2D计算理论地震图的过程中，<code>Par_file</code>中<code>output_color_image</code>选项决定了是否输出波场的snapshot，这些snapshot会在OUTPUT_FILES里被命名为<code>forward_image*.jpg</code>，有了这样的输出文件之后，我们应该怎么评价这次的计算结果是否掺杂因数值频散而出现的噪声？</p>
+<p>先说结论：</p>
+<blockquote>
+<p>区域内出现的最短的波长必须大于网格的尺寸</p>
+</blockquote>
+<a class="post-dummy-target" id="heading"></a><h3>首先给出一个不太合理的例子</h3>
+<p><img src="/Users/ranor/myblog/static/images/noise.png" alt="noise"></p>
+<p>上图分别给出了波场在4s，40s，76s的snapshot，注意4s图中黄色方框部分，相较于传播更快的P波，这里的S波在第一层介质中的传播过程中伴随有噪声出现，而这些噪声在4s之后的时间(如40s，76s)会逐渐传播至整个区域。由于数值方法在模拟地震波传播时，如果解是稳定的，则只会有地震波的存在，不会出现噪声。因此这里出现噪声证明了这次模拟(即数值解)不够稳定，出现了数值频散。</p>
+<a class="post-dummy-target" id="sem"></a><h3>那么，对于二维的SEM稳定的数值解主要依赖于：</h3>
+<p>1.在对整个研究区域网格化时，<code>网格的大小必须小于区域内可能出现的波长最小值</code>。如果不这样设置，解会不稳定,就会出现噪声</p>
+<p>2.DT的设置必须要满足<code>DT &lt; constant*min(h/v)</code>，其中constant是一个常数，一般取值为0.3，h是两个GLL积分点之间的距离，v是介质中波传播的速度。min(h/v)意味着最小的网格点距离除以最大的速度。详细内容请见SPECFEM3D的user_manual中4.2节。如果网格变小，DT未随之调整变小，则会有如下报错信息。</p>
+<p><img src="/Users/ranor/myblog/static/images/error.png" alt="error"></p>
+<a class="post-dummy-target" id="heading-1"></a><h3>具体示例</h3>
+<p>下面给出一个具体的简单的例子，研究的区域大小为200km*100km，其中X方向长为200km，Z方向长为100km，震源时间函数设置为Ricker，主频设置为2Hz。整个区域设置为3层模型，每层的厚度为30km/30km/40km，每层模型的速度-密度参数如下图：</p>
+<p><img src="/Users/ranor/myblog/static/images/model.png" alt="model"></p>
+<p>1.在网格的大小设置上，区域内可能出现的最小波长主要与两个因素有关，一是最小的波传播的速度，二是震源频带范围的最大频率。最小的波传播的速度，也就是最小的的S波速度，为3200m/s。最大频率可以对已有的SAC文件做傅立叶变换得到，虽然之前得到了不合理的模拟结果，但是可以通过对生成的SAC文件做傅立叶变换，得到SAC文件的振幅谱图像(如下)，找出SAC文件的主要频段，也是震源时间函数的主要频段，通过下图我们可以看出主频为2Hz的震源，其有效信息的最大频率为6Hz左右，所以区域内可能出现的最小波长为3200/6=533.3m，因此将网格的大小设置为500m*500m。</p>
+<p><img src="/Users/ranor/myblog/static/images/Am.png" alt="Am"></p>
+<p>2.在DT的选择上，如果过大会报错，如果过小则NSTEP要设置的很大才能得到足够长的地震记录，但这也会造成计算的时间会很长，所以需要尽可能取最大值。一般常数取0.3，h的大小取决于网格的大小和一个网格中GLL积分点的个数，GLL积分点的个数默认为5，h为两个GLL积分点之间的距离。一些尝试表明，在计算DT的选择范围时，h可以认为等于网格的大小/GLL积分点的个数。则对于此次模拟来说，DT应该小于0.3*(500/5/5800)=0.005172，所以DT选择0.005是合适的。在实际的计算过程中，可以使用这一关系进行大致估计，如果不出现上述的报错则说明设置的DT是正确的。</p>
+<p><img src="images/no_noise.png" alt="no_noise"></p>
+<p>相较于之前(区域网格大小设置为1km*1km，DT取0.01，其余参数相同)，噪声不再出现，从波场图的角度分析这是一个合理的模拟结果。</p>
+<a class="post-dummy-target" id="sac"></a><h3>注：怎么基于已有的SAC文件绘制振幅谱</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ sac
+
+SAC &gt; r ./AA.S0001.BXZ.SAC
+SAC &gt; fft
+SAC &gt; psp am
+SAC &gt; q
+</code></pre></td></tr></table>
+</div>
+</div><p>SEM3D的user_manual: <a href="https://github.com/geodynamics/specfem3d/blob/master/doc/USER_MANUAL/manual_SPECFEM3D_Cartesian.pdf">点这里</a></p>
+
+        </div>
+
+        <div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-03-11 更新</span>
+            </div>
+            <div class="post-info-license">
+                
+            </div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md">
+                
+                    
+                        <span><a class="link-to-markdown" href="https://ranoriginals.github.io/2020/03/sem/index.md" target="_blank">阅读原始文档</a></span>
+                    
+                
+            </div>
+            <div class="post-info-share">
+                
+                    <span>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</span>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section>
+            
+                
+                    <span class="tag">
+                        <a href="https://ranoriginals.github.io/tags/sem/"><i class="fas fa-tag fa-fw"></i>SEM</a>
+                    </span>
+                
+            
+        </section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="https://ranoriginals.github.io/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+            <a href="https://ranoriginals.github.io/2020/01/server/" class="prev" rel="prev" title="研究组服务器使用说明"><i class="fas fa-angle-left fa-fw"></i>研究组服务器使用说明</a>
+        
+        
+    </div>
+</div>
+
+        <div class="post-comment">
+            
+            
+
+            
+        </div>
+    </article></div>
+            </main>
+            <footer class="footer">
+    <div class="copyright">
+        <div class="copyright-line">
+            由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动&nbsp;|&nbsp;主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer">LoveIt<i class="far fa-heart fa-fw"></i></a>
+        </div>
+        <div class="copyright-line">
+            <i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://ranoriginals.github.io/">Ranor</a></span><span class="license">&nbsp;|&nbsp;<a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+
+    
+    
+
+
+
+    
+    
+
+
+
+
+
+    
+    
+
+
+<script src="/js/lib/jquery/jquery.slim.min.min.js"></script>
+<script src="/js/lib/lazysizes/lazysizes.min.min.js"></script>
+<script src="/js/lib/smooth-scroll/smooth-scroll.polyfills.min.min.js"></script><script>window.scroll = new SmoothScroll('[data-scroll]', {speed: 300, speedAsDuration: true});</script>
+
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+
+
+
+
+
+<script src="/js/blog.min.js"></script>
+
+
+    
+</div>
+        <a href="#" class="dynamic-to-top" id="dynamic-to-top" data-scroll><span>&nbsp;</span></a>
+    </body>
+</html>

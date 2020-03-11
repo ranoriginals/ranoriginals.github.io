@@ -12,9 +12,18 @@
             <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
         
         
-            <lastBuildDate>Thu, 23 Jan 2020 22:10:12 +0000</lastBuildDate>
+            <lastBuildDate>Wed, 11 Mar 2020 15:22:53 +0800</lastBuildDate>
         
         <atom:link href="https://ranoriginals.github.io/" rel="self" type="application/rss+xml" />
+        
+            <item>
+                <title>Posts</title>
+                <link>https://ranoriginals.github.io/posts/</link>
+                <pubDate>Wed, 11 Mar 2020 15:22:53 +0800</pubDate>
+                
+                <guid>https://ranoriginals.github.io/posts/</guid>
+                <description></description>
+            </item>
         
             <item>
                 <title>About Ranor</title>
@@ -26,15 +35,6 @@
 &lt;h2 id=&#34;nanjing-university&#34;&gt;Nanjing University&lt;/h2&gt;
 &lt;h2 id=&#34;geophysic--seismology&#34;&gt;Geophysic &amp;amp;&amp;amp; Seismology&lt;/h2&gt;
 </description>
-            </item>
-        
-            <item>
-                <title>Posts</title>
-                <link>https://ranoriginals.github.io/posts/</link>
-                <pubDate>Thu, 23 Jan 2020 22:47:05 +0800</pubDate>
-                
-                <guid>https://ranoriginals.github.io/posts/</guid>
-                <description></description>
             </item>
         
     </channel>

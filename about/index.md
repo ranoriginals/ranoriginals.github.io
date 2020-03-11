@@ -3,6 +3,6 @@
 
 # Some tags
 
-##  Nanjing University
+## Nanjing University
 
 ## Geophysic && Seismology
