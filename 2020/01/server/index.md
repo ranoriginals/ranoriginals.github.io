@@ -94,13 +94,5 @@ Taup:
 export TAUPHOME=/opt/TauP-2.4.5 
 export PATH=${TAUPHOME}/bin:${PATH} 
 ```
-
-
-
-
-## V100服务器 
-
-#### IP地址：114.212.169.61，使用SSH连接，不可以直接连接外网，也不能从外网访问 
-
-#### 如何访问外网 
+ 
 
