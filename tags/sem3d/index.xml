@@ -18,7 +18,7 @@
       <pubDate>Sun, 15 Mar 2020 21:59:54 +0800</pubDate>
       
       <guid>https://ranoriginals.github.io/2020/03/sem3d/</guid>
-      <description>SPECFEM3D 使用记录 以SPECFEM3D内置的mesh生成程序xmeshfem3D为例 示例路径：SPECFEM3D/EXAMPLES/meshfem3</description>
+      <description>SPECFEM3D 使用记录 以SPECFEM3D内置的mesh生成程序xmeshfem3D为例 示例路径： SPECFEM3D/EXAMPLES/meshfem3d_examples/cavity/DATA/meshfem3D_files Mesh_Par_file的具体参数 1 2 3 4 5 6 7 8</description>
     </item>
     
   </channel>
