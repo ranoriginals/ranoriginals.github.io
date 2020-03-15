@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 11 Mar 2020 15:22:53 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2020 21:59:54 +0800</lastBuildDate>
     
 	<atom:link href="https://ranoriginals.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SEM3D使用记录</title>
+      <link>https://ranoriginals.github.io/2020/03/sem3d/</link>
+      <pubDate>Sun, 15 Mar 2020 21:59:54 +0800</pubDate>
+      
+      <guid>https://ranoriginals.github.io/2020/03/sem3d/</guid>
+      <description>SPECFEM3D 使用记录 以SPECFEM3D内置的mesh生成程序xmeshfem3D为例 示例路径：SPECFEM3D/EXAMPLES/meshfem3</description>
+    </item>
     
     <item>
       <title>SPECFEM2D避免数值频散</title>

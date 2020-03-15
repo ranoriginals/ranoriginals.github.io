@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SEM3D on Ranor</title>
+    <link>https://ranoriginals.github.io/categories/sem3d/</link>
+    <description>Recent content in SEM3D on Ranor</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sun, 15 Mar 2020 21:59:54 +0800</lastBuildDate>
+    
+	<atom:link href="https://ranoriginals.github.io/categories/sem3d/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SEM3D使用记录</title>
+      <link>https://ranoriginals.github.io/2020/03/sem3d/</link>
+      <pubDate>Sun, 15 Mar 2020 21:59:54 +0800</pubDate>
+      
+      <guid>https://ranoriginals.github.io/2020/03/sem3d/</guid>
+      <description>SPECFEM3D 使用记录 以SPECFEM3D内置的mesh生成程序xmeshfem3D为例 示例路径：SPECFEM3D/EXAMPLES/meshfem3</description>
+    </item>
+    
+  </channel>
+</rss>
