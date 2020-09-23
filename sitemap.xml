@@ -43,6 +43,34 @@
         </url>
     
         <url>
+            <loc>https://ranoriginals.github.io/</loc>
+            
+                <lastmod>2020-08-11T21:10:12+00:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
+            <loc>https://ranoriginals.github.io/about/</loc>
+            
+                <lastmod>2020-08-11T21:10:12+00:00</lastmod>
+            
+            
+                <changefreq>weekly</changefreq>
+            
+            
+                <priority>0.5</priority>
+            
+            
+        </url>
+    
+        <url>
             <loc>https://ranoriginals.github.io/categories/</loc>
             
                 <lastmod>2020-03-15T21:59:54+08:00</lastmod>
@@ -58,20 +86,6 @@
     
         <url>
             <loc>https://ranoriginals.github.io/posts/</loc>
-            
-                <lastmod>2020-03-15T21:59:54+08:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
-            <loc>https://ranoriginals.github.io/</loc>
             
                 <lastmod>2020-03-15T21:59:54+08:00</lastmod>
             
@@ -127,20 +141,6 @@
         </url>
     
         <url>
-            <loc>https://ranoriginals.github.io/categories/sem2d/</loc>
-            
-                <lastmod>2020-03-11T15:22:53+08:00</lastmod>
-            
-            
-                <changefreq>weekly</changefreq>
-            
-            
-                <priority>0.5</priority>
-            
-            
-        </url>
-    
-        <url>
             <loc>https://ranoriginals.github.io/tags/sem2d/</loc>
             
                 <lastmod>2020-03-11T15:22:53+08:00</lastmod>
@@ -155,9 +155,9 @@
         </url>
     
         <url>
-            <loc>https://ranoriginals.github.io/about/</loc>
+            <loc>https://ranoriginals.github.io/categories/sem2d/</loc>
             
-                <lastmod>2020-01-23T22:10:12+00:00</lastmod>
+                <lastmod>2020-03-11T15:22:53+08:00</lastmod>
             
             
                 <changefreq>weekly</changefreq>
@@ -169,7 +169,7 @@
         </url>
     
         <url>
-            <loc>https://ranoriginals.github.io/tags/linux/</loc>
+            <loc>https://ranoriginals.github.io/categories/linux/</loc>
             
                 <lastmod>2020-01-23T22:47:05+08:00</lastmod>
             
@@ -183,7 +183,7 @@
         </url>
     
         <url>
-            <loc>https://ranoriginals.github.io/categories/linux/</loc>
+            <loc>https://ranoriginals.github.io/tags/linux/</loc>
             
                 <lastmod>2020-01-23T22:47:05+08:00</lastmod>
             
